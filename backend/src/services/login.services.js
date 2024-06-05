@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 const loginService = async (email) => {
     try{
-        const user_secretario = await secretario.findOne({email}).select('+senha');
+        const user_secretario = await secretario.findOne({email: email}).select('+senha');
         return user_secretario;
     }catch(error){
         console.error('Erro ao buscar Usuário para login:', error);
@@ -11,6 +11,7 @@ const loginService = async (email) => {
     }
 };
 
-const genarateToken = (id) => jwt.sign({id:id}, process.env.SECRETJWT, {expiresIN: 86400})
+
+const genarateToken = (id) => jwt.sign({id:id}, process.env.SECRETJWT, {expiresIN: 86400}) // 24 horas segundo
 
 export default {loginService, genarateToken}

@@ -16,7 +16,7 @@ const create = async (req, res) => {
       return res.status(400).send({ message: "As senhas não coincidem" });
     }
 
-    const user = await create_sec.create_sec(req.body);
+    const user = await create_sec.create(req.body);
 
     if (!user) {
       return res.status(400).send({ message: "Erro ao cruar usuário" });
