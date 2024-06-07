@@ -6,13 +6,13 @@ const create = async (req, res) => {
     const { nome, sobrenome, email, telefone, cpf, data_nascimento, sexo, endereco, senha, confirm_senha } = req.body;
 
     if ( !nome || !sobrenome || !email || !telefone || !cpf || !data_nascimento || !sexo || !endereco ||!senha || !confirm_senha) 
-      return res.status(400).send({message: "Submeta todos os campos do regustro!"})
+      return res.status(400).send({message: "Submeta todos os campos do registro!"})
 
     if (senha !== confirm_senha) {
       return res.status(400).send({ message: "As senhas não coincidem" });
     }
 
-    const user = await create_sec.create(req.body);
+    const user = await create_sec.createService(req.body);
 
     if (!user) {
       return res.status(400).send({ message: "Erro ao criar usuário" });
