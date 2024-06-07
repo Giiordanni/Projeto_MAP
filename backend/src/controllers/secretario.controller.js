@@ -1,16 +1,12 @@
-import create_sec from '../services/secretario.services.js';
+import create_sec from '../services/user.services.js';
 import message from "../services/message.services.js";
 
 const create = async (req, res) => {
   try {
     const { nome, sobrenome, email, telefone, cpf, data_nascimento, sexo, endereco, senha, confirm_senha } = req.body;
 
-    if ( !nome || !sobrenome || !email || !telefone || !cpf || !data_nascimento || !sexo || !endereco ||!senha || !confirm_senha) {
-      console.log( nome, sobrenome, email, telefone, cpf, data_nascimento, sexo, endereco, senha, confirm_senha );
-      return res
-        .status(400)
-        .send({ message: "Todos os campos precisam estar preenchidos" });
-    }
+    if ( !nome || !sobrenome || !email || !telefone || !cpf || !data_nascimento || !sexo || !endereco ||!senha || !confirm_senha) 
+      throw new Error("Todos os campos precisam estar preenchidos");
 
     if (senha !== confirm_senha) {
       return res.status(400).send({ message: "As senhas não coincidem" });
@@ -19,22 +15,21 @@ const create = async (req, res) => {
     const user = await create_sec.create(req.body);
 
     if (!user) {
-      return res.status(400).send({ message: "Erro ao cruar usuário" });
+      return res.status(400).send({ message: "Erro ao criar usuário" });
     }
 
-    req.status(201).send({
+    res.status(201).send({
       message: "Usuário criado com sucesso",
       user: {
         id: user_id,
         nome,
-        email
+        sobrenome,
+        email,
+        cpf
       }
-    });
-  } catch (error) {
-    console.error("Erro aos criar Usuário: ", error);
-    res
-      .status(500)
-      .send({ message: "Ocorreu uum erro ao processar solicitação" });
+    })
+  } catch (err) {
+    res.status(500).send({message: err.message});
   }
 };
 
