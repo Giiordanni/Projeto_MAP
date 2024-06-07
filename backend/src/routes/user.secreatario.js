@@ -1,5 +1,5 @@
 import {Router} from "express";
-import UserController from "../controllers/secretario.controller.js";
+import UserController from "../controllers/user.controllers.secretario.js";
 import { validId, ValidUser } from "../middlewares/global.middlewares.js";
 
 const route = Router();
