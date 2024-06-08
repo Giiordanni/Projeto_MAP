@@ -75,6 +75,9 @@
 }
 
 .personal-info input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 10px;
     border-radius: 10px;
 }
@@ -84,6 +87,8 @@
 }
 
 .personal-info button {
+    position: relative;
+    margin-left: 6px;
     color: var(--branco-suas);
     background-color: var(--verde-suas);
     padding: 10px 64px;

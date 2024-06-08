@@ -19,7 +19,7 @@ const create = async (req, res) => {
     const user = await create_sec.create(req.body);
 
     if (!user) {
-      return res.status(400).send({ message: "Erro ao cruar usuário" });
+      return res.status(400).send({ message: "Erro ao criar usuário" });
     }
 
     req.status(201).send({
@@ -57,7 +57,7 @@ const findAll = async (req, res) => {
     } catch(err){
         res.status(500).send({message: err.message});
     }
-    };
+};
 
 const update = async (req, res) => {
   try {

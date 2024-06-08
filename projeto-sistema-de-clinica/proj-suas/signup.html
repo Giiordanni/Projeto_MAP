@@ -21,39 +21,41 @@
                 <a href="#">Serviços</a>
                 <a href="login.html">Login</a>
             </nav>
-            <div>
-                <input type="text" name="first-name" id="first-name" placeholder="* Nome" required>
-            </div>
-            <div>
-                <input type="text" name="last-name" id="last-name" placeholder="* Sobrenome" required>
-            </div>
-            <div>
-                <input type="email" name="user-email" id="user-email" placeholder="* Email" required>
-            </div>
-            <div>
-                <input type="tel" name="phone-number" id="phone-number" placeholder="* Telefone" required>
-            </div>
-            <div>
-                <input type="text" name="cpf" id="cpf" placeholder="* CPF" required>
-            </div>
-            <div>
-                <input type="date" name="birth-date" id="birth-date" placeholder="* Data de Nascimento" required>
-            </div>
-            <div>
-                    <input type="radio" name="gender" id="male" value="male" required> Sexo masculino
-                    <input type="radio" name="gender" id="female" value="female" required> Sexo feminino
-                    <input type="radio" name="gender" id="other" value="other" required> Outro
-            </div>
-            <div>
-                <input type="text" name="endereco" id="endereco" placeholder="* Endereço">
-            </div>
-            <div>
-                <input type="password" name="password" id="password" placeholder="* Senha">
-            </div>
-            <div>
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="* Confirmar Senha">
-            </div>
-            <button type="submit">Cadastrar</button>
+            <form id="form-cadastro" action="/cadastrar" method="POST">
+                <div>
+                    <input type="text" name="first-name" id="first-name" placeholder="* Nome" required>
+                </div>
+                <div>
+                    <input type="text" name="last-name" id="last-name" placeholder="* Sobrenome" required>
+                </div>
+                <div>
+                    <input type="email" name="user-email" id="user-email" placeholder="* Email" required>
+                </div>
+                <div>
+                    <input type="tel" name="phone-number" id="phone-number" placeholder="* Telefone" required>
+                </div>
+                <div>
+                    <input type="text" name="cpf" id="cpf" placeholder="* CPF" required>
+                </div>
+                <div>
+                    <input type="date" name="birth-date" id="birth-date" placeholder="* Data de Nascimento" required>
+                </div>
+                <div>
+                        <input type="radio" name="gender" id="gender" value="male" required> Sexo masculino
+                        <input type="radio" name="gender" id="gender" value="female" required> Sexo feminino
+                        <input type="radio" name="gender" id="gender" value="other" required> Outro
+                </div>
+                <div>
+                    <input type="text" name="endereco" id="endereco" placeholder="* Endereço">
+                </div>
+                <div>
+                    <input type="password" name="password" id="password" placeholder="* Senha">
+                </div>
+                <div>
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="* Confirmar Senha">
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
             <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
         </div>
     </div>
