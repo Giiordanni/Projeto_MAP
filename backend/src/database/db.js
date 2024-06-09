@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
+
 const connectDataBase = () => {
     console.log("Aguardando conexão")
-
     mongoose.connect(process.env.MONGODB_URI, {
 }).then(() => {
     console.log("Conectado ao MongoDB");
