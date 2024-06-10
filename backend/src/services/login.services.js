@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 const loginService = async (email) => {
     try{
-        const user_secretario = await secretario.findOne({email: email}).select('+senha');
+        const user_secretario = await secretario.findOne({email: email}).select("+senha");
         return user_secretario;
     }catch(error){
         console.error('Erro ao buscar Usuário para login:', error);

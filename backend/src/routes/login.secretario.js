@@ -2,8 +2,8 @@ import loginControler from "../controllers/login.controlers.js";
 import {Router} from 'express';
 
 
-const route = Router();
+const loginRouter = Router();
 
-route.post("/", loginControler.login);
+loginRouter.post("/", loginControler.login);
 
-export default route;
+export default loginRouter;
