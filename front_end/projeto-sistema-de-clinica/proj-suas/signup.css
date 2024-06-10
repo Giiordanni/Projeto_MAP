@@ -74,25 +74,30 @@
     padding: 6px;
 }
 
-.personal-info input{
+#form-cadastro {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.personal-info input {
     padding: 10px;
-    border-radius: 10px;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 4px;
 }
 
 #birth-date {
     padding: 10px 36px;
+    color: grey;
 }
 
 .personal-info button {
-    position: relative;
-    margin-left: 6px;
     color: var(--branco-suas);
     background-color: var(--verde-suas);
     padding: 10px 64px;
-    border-radius: 10px;
+    border-radius: 4px;
     margin-top: 6px;
     border-color: var(--verde-suas);
     cursor: pointer;

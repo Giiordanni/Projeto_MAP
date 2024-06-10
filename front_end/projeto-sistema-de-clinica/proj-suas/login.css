@@ -102,14 +102,16 @@ nav a:hover {
 
 .box-login input {
     padding: 10px;
-    border-radius: 30px;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 40px;
 }
 
 .box-login button {
     color: var(--branco-suas);
     background-color: var(--verde-suas);
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 40px;
     border-color: var(--verde-suas);
     cursor: pointer;
 }
